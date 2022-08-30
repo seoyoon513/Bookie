@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -32,6 +33,24 @@ android {
 }
 
 dependencies {
+
+    //navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.9.0'
+
+    //Network
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation platform("com.squareup.okhttp3:okhttp-bom:4.10.0")
+    implementation "com.squareup.okhttp3:okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.0'
