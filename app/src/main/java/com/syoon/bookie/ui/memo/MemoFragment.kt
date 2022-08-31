@@ -1,4 +1,4 @@
-package com.syoon.bookie.ui
+package com.syoon.bookie.ui.memo
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,13 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.syoon.bookie.R
 
-class HomeFragment: Fragment() {
+class MemoFragment: Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_memo, container, false)
     }
 }

@@ -8,21 +8,20 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object BookApiClient {
 
-    fun create(): BookApi {
-
-        val logger = HttpLoggingInterceptor().apply {
+    private val logger = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BASIC
-        }
-
-        val client = OkHttpClient.Builder()
-            .addInterceptor(logger)
-            .build()
-
-        return Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(BookApi::class.java)
     }
+
+    private val client = OkHttpClient.Builder()
+        .addInterceptor(logger)
+        .build()
+
+    private fun retrofit(): Retrofit = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .client(client)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+
+    val bookApi: BookApi = retrofit().create(BookApi::class.java)
+
 }

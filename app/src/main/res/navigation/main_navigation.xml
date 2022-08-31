@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.syoon.bookie.ui.HomeFragment"
+        android:name="com.syoon.bookie.ui.home.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_bookmark"
-        android:name="com.syoon.bookie.ui.BookmarkFragment"
+        android:name="com.syoon.bookie.ui.bookmark.BookmarkFragment"
         android:label="@string/bookmark"
         tools:layout="@layout/fragment_bookmark" />
 
     <fragment
         android:id="@+id/navigation_memo"
-        android:name="com.syoon.bookie.ui.MemoFragment"
+        android:name="com.syoon.bookie.ui.memo.MemoFragment"
         android:label="@string/memo"
         tools:layout="@layout/fragment_memo" />
 
